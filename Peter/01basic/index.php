@@ -12,19 +12,19 @@
     <form action="index.php" method = "POST">
         Name: <input type="text" name="name">
         Surname: <input type="text" name="surname">
-        <input type="submit" name="submit">
+        <!-- <input type="submit" name="submit"> -->
     </form>
-    <?php
-        if( isset($_POST['submit'])){
-            if($_POST['name'] && $_POST['surname']){
-                echo "Hello {$_POST['name']} {$_POST['surname']}";
-            }
-            elseif(!$_POST['name'] && $_POST['surname']){
-                echo "Please insert first name";
-            }elseif(($_POST['name'] && !$_POST['surname'])){
-                echo "Please insert last name";
-            }
-        }
+     <?php
+        // if( isset($_POST['submit'])){
+        //     if($_POST['name'] && $_POST['surname']){
+        //         echo "Hello {$_POST['name']} {$_POST['surname']}";
+        //     }
+        //     elseif(!$_POST['name'] && $_POST['surname']){
+        //         echo "Please insert first name";
+        //     }elseif(($_POST['name'] && !$_POST['surname'])){
+        //         echo "Please insert last name";
+        //     }
+        // }
     ?>
 
     <p>Exercise 2</p>
@@ -36,5 +36,38 @@
         }
         divideEx2(6,2);
     ?>
+
+    <p>Exercise 3</p>
+    
+    <form action="index.php" method = "POST">
+        Math: <input type="text" name="math">
+        Physics: <input type="text" name="physics">
+        English: <input type="text" name="english">
+        <input type="submit" name="submit">
+    </form>
+    <?php
+            
+        $intMath = (int) $_POST['math'];
+        $intPhysics = (int) $_POST['physics'];
+        $intEnglish = (int) $_POST['english'];
+
+        function calcGradesEx3($intMath, $intPhysics, $intEnglish){
+            $sum = $intMath + $intPhysics + $intEnglish;
+            echo "Sum : $sum <br>";
+            $avg = $sum/3;
+            echo "Average: $avg";
+
+        }
+        calcGradesEx3($intMath, $intPhysics, $intEnglish);
+
+        // $marks =[
+        // ($intMath = (int) $_POST['math']),
+        // ($intPhysics = (int) $_POST['physics']),
+        // ($intEnglish = (int) $_POST['english'])
+        // ];
+
+    ?>
+
+    
 </body>
 </html>
