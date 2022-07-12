@@ -78,21 +78,38 @@
     </form>
     <?php
             
-        $intwidth = (int) $_POST['width'];
-        $intheight = (int) $_POST['height'];
-        $intdepth = (int) $_POST['depth'];
+        // $intwidth = (int) $_POST['width'];
+        // $intheight = (int) $_POST['height'];
+        // $intdepth = (int) $_POST['depth'];
 
-        function calcBoxEx4($intwidth, $intheight, $intdepth){
-            $area = $intwidth * $intheight;
-            echo "Area of the box is : $area <br>";
-            $vol = $area * $intdepth;
-            echo "Volume of the box is: $vol";
+        // function calcBoxEx4($intwidth, $intheight, $intdepth){
+        //     $area = $intwidth * $intheight;
+        //     echo "Area of the box is : $area <br>";
+        //     $vol = $area * $intdepth;
+        //     echo "Volume of the box is: $vol";
 
-        }
-        calcBoxEx4($intwidth, $intheight, $intdepth);
+        // }
+        // calcBoxEx4($intwidth, $intheight, $intdepth);
 
       
     ?>
 
+    <p>Exercise 5</p>
+
+    <form action="index.php" method="post">
+        Enter Minutes: <input type="text" name="minutes">
+        <input type="submit" name="submit">
+    </form>
+    <?php
+        function calcMinutesEx5($a){
+            $minutes = (int) $_POST['minutes'];
+            $hours =  $minutes/60;
+            $inthours = (int) $hours;
+            $modminutes = $minutes % 60;
+            echo "{$_POST['minutes']} minutes are $inthours hours and $modminutes minutes";
+
+        }
+        calcMinutesEx5($_POST['minutes']);
+    ?>
 </body>
 </html>
