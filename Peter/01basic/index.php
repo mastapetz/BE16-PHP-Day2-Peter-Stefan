@@ -26,5 +26,15 @@
             }
         }
     ?>
+
+    <p>Exercise 2</p>
+    <?php 
+        
+        function divideEx2($a,$b){
+            $c = $a / $b;
+            echo $c;
+        }
+        divideEx2(6,2);
+    ?>
 </body>
 </html>
