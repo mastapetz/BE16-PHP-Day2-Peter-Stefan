@@ -16,7 +16,7 @@
                 <div>
                     <h5> Exercise 1</h5>
                     <div>
-                        <form action="Exercises.php" method="POST">
+                        <form action="basic.php" method="POST">
                             Name: <input type="text" name="name">
                             Surname: <input type="text" name="surname">
                             <input type="submit" name="submit">
@@ -87,7 +87,7 @@
                 <div>
                     <h5> Exercise 6</h5>
                     <div>
-                        <form action="Exercises.php" method="POST">
+                        <form action="basic.php" method="POST">
                             Firstname: <input type="text" name="firstname">
                             Lastname: <input type="text" name="lastname">
                             Age: <input type="text" name="age1">
