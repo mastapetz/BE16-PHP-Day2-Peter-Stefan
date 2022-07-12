@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
     <title>Basic</title>
 </head>
 <body>
@@ -27,7 +29,7 @@
         // }
     ?>
 
-    <p>Exercise 2</p>
+<p>Exercise 2</p>
     <?php 
         
         function divideEx2($a,$b){
@@ -37,7 +39,7 @@
         divideEx2(6,2);
     ?>
 
-    <p>Exercise 3</p>
+<p>Exercise 3</p>
     
     <form action="index.php" method = "POST">
         Math: <input type="text" name="math">
@@ -94,22 +96,63 @@
       
     ?>
 
-    <p>Exercise 5</p>
+<p>Exercise 5</p>
 
     <form action="index.php" method="post">
         Enter Minutes: <input type="text" name="minutes">
         <input type="submit" name="submit">
     </form>
     <?php
-        function calcMinutesEx5($a){
-            $minutes = (int) $_POST['minutes'];
-            $hours =  $minutes/60;
-            $inthours = (int) $hours;
-            $modminutes = $minutes % 60;
-            echo "{$_POST['minutes']} minutes are $inthours hours and $modminutes minutes";
+        // function calcMinutesEx5($a){
+        //     $minutes = (int) $_POST['minutes'];
+        //     $hours =  $minutes/60;
+        //     $inthours = (int) $hours;
+        //     $modminutes = $minutes % 60;
+        //     echo "{$_POST['minutes']} minutes are $inthours hours and $modminutes minutes";
+
+        // }
+        // calcMinutesEx5($_POST['minutes']);
+    ?>
+<p>Exercise 6</p>
+<form action="index.php" method="post">
+    First Name <input type="text" name ="fName">
+    Last Name <input type="text" name="lName" >
+    Age <input type="text" name = "age">
+    <input type="submit" name="submit">
+</form>
+<form action="index.php" method="get">
+    Hobby: <input type="text" name="hobby">
+    <input type="submit" name="submit1">
+</form>
+<?php
+    if(isset($_POST['submit'])){
+        if($_POST['fName']&& $_POST['lName']&&$_POST['age'] ){
+            echo "<div>";
+            echo strlen($_POST['fName']) > 5 ? "First name is  <span class='text-success'> {$_POST['fName']}</span><br>": "First name is: <span class='text-danger'> {$_POST['fName']}</span> <br>" ;
+            echo "Last Name is: {$_POST['lName']}<br>";
+            echo "Age is: {$_POST['age']}";
+            echo "</div>";
+
+        } else{
+            echo "<div>";
+            echo "Please fill all fields";
+            echo "</div>";
 
         }
-        calcMinutesEx5($_POST['minutes']);
-    ?>
+    }
+    if(isset($_GET['submit1'])){
+        if($_GET['hobby']){
+            echo "<div>";
+            echo "Hobby is {$_GET['hobby']}";
+            echo "</div>";
+        }else{
+            
+            echo "<div>";
+            echo "Pleas fill all fields";
+            echo "</div>";
+        }
+    }
+?>
+
 </body>
 </html>
