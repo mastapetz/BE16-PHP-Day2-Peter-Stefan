@@ -47,18 +47,18 @@
     </form>
     <?php
             
-        $intMath = (int) $_POST['math'];
-        $intPhysics = (int) $_POST['physics'];
-        $intEnglish = (int) $_POST['english'];
+        // $intMath = (int) $_POST['math'];
+        // $intPhysics = (int) $_POST['physics'];
+        // $intEnglish = (int) $_POST['english'];
 
-        function calcGradesEx3($intMath, $intPhysics, $intEnglish){
-            $sum = $intMath + $intPhysics + $intEnglish;
-            echo "Sum : $sum <br>";
-            $avg = $sum/3;
-            echo "Average: $avg";
+        // function calcGradesEx3($intMath, $intPhysics, $intEnglish){
+        //     $sum = $intMath + $intPhysics + $intEnglish;
+        //     echo "Sum : $sum <br>";
+        //     $avg = $sum/3;
+        //     echo "Average: $avg";
 
-        }
-        calcGradesEx3($intMath, $intPhysics, $intEnglish);
+        // }
+        // calcGradesEx3($intMath, $intPhysics, $intEnglish);
 
         // $marks =[
         // ($intMath = (int) $_POST['math']),
@@ -68,6 +68,31 @@
 
     ?>
 
+<p>Exercise 4</p>
     
+    <form action="index.php" method = "POST">
+        width: <input type="text" name="width">
+        height: <input type="text" name="height">
+        depth: <input type="text" name="depth">
+        <input type="submit" name="submit">
+    </form>
+    <?php
+            
+        $intwidth = (int) $_POST['width'];
+        $intheight = (int) $_POST['height'];
+        $intdepth = (int) $_POST['depth'];
+
+        function calcBoxEx4($intwidth, $intheight, $intdepth){
+            $area = $intwidth * $intheight;
+            echo "Area of the box is : $area <br>";
+            $vol = $area * $intdepth;
+            echo "Volume of the box is: $vol";
+
+        }
+        calcBoxEx4($intwidth, $intheight, $intdepth);
+
+      
+    ?>
+
 </body>
 </html>
